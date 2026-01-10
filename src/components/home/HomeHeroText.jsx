@@ -1,11 +1,21 @@
 import React from 'react'
+import { Video } from './Video'
 
 export const HomeHeroText = () => {
   return (
-    <div className='text-[9.5vw] font-[font1] text-center'>
-      <div className="text-white uppercase leading-[9vw]">The spark for</div>
-      <div className="text-white uppercase leading-[9vw]">allthings</div>
-      <div className="text-white uppercase leading-[9vw]">creative</div>
+    <div className='font-[font2] text-[9.5vw] text-center'>
+      <div className="text-white uppercase leading-[9vw] pt-[10vw] flex items-center justify-center">
+        The spark for
+      </div>
+      <div className="text-white uppercase leading-[9vw] flex items-center justify-center">
+        all
+          <Video />
+        </div>
+        things
+      </div>
+      <div className="text-white uppercase leading-[9vw] flex items-center justify-center">
+        creative
+      </div>
     </div>
   )
 }
