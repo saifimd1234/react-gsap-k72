@@ -9,6 +9,7 @@ export const HomeHeroText = () => {
       </div>
       <div className="text-white uppercase leading-[9vw] flex items-center justify-center">
         all
+        <div className="h-[7vw] w-[16vw] -mt-2 rounded-full overflow-hidden">
           <Video />
         </div>
         things
