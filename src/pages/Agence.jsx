@@ -26,7 +26,8 @@ const Agence = () => {
                 end: "bottom -9%",
                 pin: true,
                 onUpdate: (self) => {
-                    console.log(self.progress)
+                    const imageIndex = Math.floor(self.progress * imageArray.length)
+                    imageRef.current.src = imageArray[imageIndex]
                 }
             },
         })
