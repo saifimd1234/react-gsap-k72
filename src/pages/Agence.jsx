@@ -9,7 +9,7 @@ const Agence = () => {
     const imageRef = useRef(null);
     const imageArray = [
         "public/images/luffy0.jpg",
-        "public/images/luffy1.jpg",
+        "public/images/luffy1.png",
         "public/images/luffy2.jpg",
         "public/images/luffy3.jpg",
         "public/images/luffy4.jpg",
@@ -26,7 +26,12 @@ const Agence = () => {
                 end: "bottom -9%",
                 pin: true,
                 onUpdate: (self) => {
-                    const imageIndex = Math.floor(self.progress * imageArray.length)
+                    let imageIndex;
+                    if (self.progress < 1){
+                    imageIndex = Math.floor(self.progress * imageArray.length)
+                    } else {
+                        imageIndex = imageArray.length - 1
+                    }
                     imageRef.current.src = imageArray[imageIndex]
                 }
             },
