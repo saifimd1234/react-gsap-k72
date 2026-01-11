@@ -3,8 +3,11 @@ import gsap from 'gsap';
 import React, { useRef } from 'react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Agence = () => {
-    gsap.registerPlugin(ScrollTrigger);
+
+    const containerRef = useRef(null);
     const imageDivRef = useRef(null);
     const imageRef = useRef(null);
     const imageArray = [
@@ -23,25 +26,26 @@ const Agence = () => {
                 trigger: imageDivRef.current,
                 markers: true,
                 start: "top 34%",
-                end: "bottom -9%",
+                end: "top -30%",
                 pin: true,
+                invalidateOnRefresh: true,
                 onUpdate: (self) => {
                     let imageIndex;
-                    if (self.progress < 1){
-                    imageIndex = Math.floor(self.progress * imageArray.length)
+                    if (self.progress < 1) {
+                        imageIndex = Math.floor(self.progress * imageArray.length)
                     } else {
                         imageIndex = imageArray.length - 1
                     }
-                    imageRef.current.src = imageArray[imageIndex]
+                    imageRef.current.src = imageArray[imageIndex];
                 }
             },
         })
-    });
+    }, { scope: containerRef });
 
     return (
         <div>
-            <div className="section1">
-                <div ref={imageDivRef} className="absolute overflow-hidden h-[30vw] w-[23vw] top-55 left-[23vw] rounded-4xl">
+            <div ref={containerRef} className="section1">
+                <div ref={imageDivRef} className="absolute overflow-hidden h-[30vw] w-[23vw] top-[35vh] left-[23vw] rounded-4xl">
                     <img ref={imageRef} src="public/images/luffy0.jpg" alt="luffy" className="w-full h-full object-cover" />
                 </div>
                 <div className="font-[font2] text-white relative">
@@ -55,7 +59,7 @@ const Agence = () => {
                     </div>
                 </div>
             </div>
-            <div className="section2 h-screen">
+            <div className="section2 h-[200vh]">
 
             </div>
         </div>
