@@ -3,9 +3,11 @@ import React from 'react'
 const Agence = () => {
     return (
         <div>
+            <div className="absolute h-[30vw] w-[23vw] top-55 left-[23vw] rounded-4xl bg-yellow-500">
+
             </div>
-            <div className="font-[font2] text-white">
-                <div className="bg-red-700 mt-[55vh]">
+            <div className="font-[font2] text-white relative">
+                <div className="mt-[55vh]">
                     <h1 className="text-[19vw] leading-[19vw] text-center uppercase">
                         SEVEN7Y <br /> TWO
                     </h1>
