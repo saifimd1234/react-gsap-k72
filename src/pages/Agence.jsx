@@ -6,6 +6,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 const Agence = () => {
     gsap.registerPlugin(ScrollTrigger);
     const imageDivRef = useRef(null);
+    const imageRef = useRef(null);
+    const imageArray = [
+        "public/images/luffy0.jpg",
+        "public/images/luffy1.jpg",
+        "public/images/luffy2.jpg",
+        "public/images/luffy3.jpg",
+        "public/images/luffy4.jpg",
+        "public/images/luffy5.jpg",
+        "public/images/luffy6.jpg",
+    ]
 
     useGSAP(function () {
         gsap.to(imageDivRef.current, {
@@ -23,7 +33,7 @@ const Agence = () => {
         <div>
             <div className="section1">
                 <div ref={imageDivRef} className="absolute overflow-hidden h-[30vw] w-[23vw] top-55 left-[23vw] rounded-4xl bg-yellow-500">
-                    <img src="public/images/download.jpg" alt="luffy" className="w-full h-full object-cover" />
+                    <img ref={imageRef} src="public/images/luffy0.jpg" alt="luffy" className="w-full h-full object-cover" />
                 </div>
                 <div className="font-[font2] text-white relative">
                     <div className="mt-[55vh]">
