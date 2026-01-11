@@ -22,9 +22,12 @@ const Agence = () => {
             scrollTrigger: {
                 trigger: imageDivRef.current,
                 markers: true,
-                start: "top 36%",
+                start: "top 34%",
                 end: "bottom -9%",
                 pin: true,
+                onUpdate: (self) => {
+                    console.log(self.progress)
+                }
             },
         })
     });
@@ -32,7 +35,7 @@ const Agence = () => {
     return (
         <div>
             <div className="section1">
-                <div ref={imageDivRef} className="absolute overflow-hidden h-[30vw] w-[23vw] top-55 left-[23vw] rounded-4xl bg-yellow-500">
+                <div ref={imageDivRef} className="absolute overflow-hidden h-[30vw] w-[23vw] top-55 left-[23vw] rounded-4xl">
                     <img ref={imageRef} src="public/images/luffy0.jpg" alt="luffy" className="w-full h-full object-cover" />
                 </div>
                 <div className="font-[font2] text-white relative">
