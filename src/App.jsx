@@ -6,7 +6,14 @@ import { Route, Routes } from 'react-router-dom'
 
 const App = () => {
   return (
-    <div>
+    <div className="text-white">
+      <div className="h-screen w-full flex fixed z-10 top-0">
+        <div className="h-full w-1/5 bg-black" />
+        <div className="h-full w-1/5 bg-white" />
+        <div className="h-full w-1/5 bg-black" />
+        <div className="h-full w-1/5 bg-white" />
+        <div className="h-full w-1/5 bg-black" />
+      </div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/agence" element={<Agence />} />
