@@ -44,8 +44,8 @@ const Agence = () => {
 
     return (
         <div>
-            <div ref={containerRef} className="section1">
-                <div ref={imageDivRef} className="absolute overflow-hidden h-[30vw] w-[23vw] top-[35vh] left-[23vw] rounded-4xl">
+            <div ref={containerRef} className="section1 bg-amber-700 py-1"> {/* important: py-1  */}
+                <div ref={imageDivRef} className="absolute overflow-hidden h-[20vw] w-[15vw] top-34 left-[30vw] rounded-4xl">
                     <img ref={imageRef} src="public/images/luffy0.jpg" alt="luffy" className="w-full h-full object-cover" />
                 </div>
                 <div className="font-[font2] text-white relative">
