@@ -9,6 +9,9 @@ const Agence = () => {
 
     const imageDivRef = useRef(null);
     const imageRef = useRef(null);
+        // 🔹 NEW: ref for paragraph (used to decide pin end)
+    const paragraphRef = useRef(null);
+
     const imageArray = [
         "/images/luffy0.jpg",
         "/images/luffy1.png",
@@ -23,18 +26,20 @@ const Agence = () => {
         gsap.to(imageDivRef.current, {
             scrollTrigger: {
                 trigger: imageDivRef.current,
+                endTrigger: paragraphRef.current,
                 markers: true,
-                start: "top 34%",
-                end: "top -30%",
+                end: "bottom 65%",
+                start: "top 25%",
                 pin: true,
                 pinSpacing: true,
                 pinReparent: true,
                 pinType: "transform",
-                scrub: 1,
+                scrub: true,
                 anticipatePin: 1,
                 invalidateOnRefresh: true,
                 onUpdate: (self) => {
                     let imageIndex;
+                    console.log(self.progress)
                     if (self.progress < 1) {
                         imageIndex = Math.floor(self.progress * imageArray.length)
                     } else {
@@ -44,12 +49,12 @@ const Agence = () => {
                 }
             },
         })
-    });
+    }, []);
 
     return (
         <div>
             <div className="section1 py-1"> {/* important: py-1  */}
-                <div ref={imageDivRef} className="absolute overflow-hidden h-[20vw] w-[15vw] top-96 left-[30vw] rounded-4xl">
+                <div ref={imageDivRef} className="absolute overflow-hidden h-[20vw] w-[15vw] top-[50vh] left-[30vw] rounded-3xl">
                     <img ref={imageRef} src="/images/luffy0.jpg" alt="luffy" className="w-full h-full object-cover" />
                 </div>
                 <div className="font-[font2] text-white relative">
@@ -58,7 +63,7 @@ const Agence = () => {
                             SEVEN7Y <br /> TWO
                         </h1>
                     </div>
-                    <div className="pl-[40%] mt-20">
+                    <div ref={paragraphRef} className="pl-[40%] mt-20">
                         <p className="text-2xl leading-[1em]"> &nbsp; &emsp; We’re inquisitive and open-minded, and we make sure creativity crowds out ego from every corner. A brand is a living thing, with values, a personality and a story. If we ignore that, we can achieve short-term success, but not influence that goes the distance. We bring that perspective to every brand story we help tell.</p>
                     </div>
                 </div>
