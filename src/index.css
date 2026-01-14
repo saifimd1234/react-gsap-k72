@@ -17,6 +17,15 @@
   animation-timing-function: linear;
 }
 
+.moveLink{
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.link:hover .moveLink{
+  opacity: 1;
+}
+
 @keyframes moveAnimation {
   from{
     transform: translateX(0);

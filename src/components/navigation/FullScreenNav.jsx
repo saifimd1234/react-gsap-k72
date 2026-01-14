@@ -2,7 +2,7 @@ import React from 'react'
 
 const FullScreenNav = () => {
     return (
-        <div id='fullscreennav' className="text-white h-screen py-40 w-full absolute bg-amber-900">
+        <div id='fullscreennav' className="text-white h-screen py-40 w-full absolute bg-black">
             <div id='all-links' className=''>
                 <div className='link relative border-t-[0.3px] border-white'>
                     <h1 className='font-font[2] text-center text-[10vw] leading-[1.1] -mt-2 uppercase'>Projects</h1>
@@ -24,7 +24,7 @@ const FullScreenNav = () => {
                     </div>
                 </div>
                 <div className='link relative border-t-[0.3px] border-white'>
-                    <h1 className='font-font[2] text-center text-[10vw] leading-[1.1] -mt-2 uppercase'>Projects</h1>
+                    <h1 className='font-font[2] text-center text-[10vw] leading-[1.1] -mt-2 uppercase'>Agency</h1>
                     <div className='moveLink absolute w-full left-0 top-0 overflow text-black bg-[#D3FD50]'>
                         <div className='flex w-max'>
                             <div className='moveX flex items-center'>
@@ -43,7 +43,7 @@ const FullScreenNav = () => {
                     </div>
                 </div>
                 <div className='link relative border-t-[0.3px] border-white'>
-                    <h1 className='font-font[2] text-center text-[10vw] leading-[1.1] -mt-2 uppercase'>Projects</h1>
+                    <h1 className='font-font[2] text-center text-[10vw] leading-[1.1] -mt-2 uppercase'>Contact</h1>
                     <div className='moveLink absolute w-full left-0 top-0 overflow text-black bg-[#D3FD50]'>
                         <div className='flex w-max'>
                             <div className='moveX flex items-center'>
@@ -61,8 +61,8 @@ const FullScreenNav = () => {
                         </div>
                     </div>
                 </div>
-                <div className='link relative border-t-[0.3px] border-white'>
-                    <h1 className='font-font[2] text-center text-[10vw] leading-[1.1] -mt-2 uppercase'>Projects</h1>
+                <div className='link relative border-y-[0.3px] border-white'>
+                    <h1 className='font-font[2] text-center text-[10vw] leading-[1.1] -mt-2 uppercase'>Blog</h1>
                     <div className='moveLink absolute w-full left-0 top-0 overflow text-black bg-[#D3FD50]'>
                         <div className='flex w-max'>
                             <div className='moveX flex items-center'>
