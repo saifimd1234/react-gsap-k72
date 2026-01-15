@@ -1,18 +1,42 @@
 import React from 'react'
+import { useRef } from 'react'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 
 const FullScreenNav = () => {
+
+    const fullNavLinksRef = useRef(null);
+
+    useGSAP(function () {
+        const tl = gsap.timeline();
+
+        tl.from('.stairing', {
+            height: 0,
+
+            stagger: {
+                amount: -0.25
+            }
+        })
+        tl.from(fullNavLinksRef.current, {
+            opacity: 0,
+            stagger: {
+                amount: 0.2
+            }
+        })
+    })
+
     return (
         <div id='fullscreennav' className="text-white h-screen w-full overflow-x-hidden absolute bg-black">
             <div className='h-screen w-full fixed'>
                 <div className="h-full w-full flex">
-                    <div className="stair h-full w-1/5 bg-black" />
-                    <div className="stair h-full w-1/5 bg-white" />
-                    <div className="stair h-full w-1/5 bg-black" />
-                    <div className="stair h-full w-1/5 bg-white" />
-                    <div className="stair h-full w-1/5 bg-black" />
+                    <div className="stairing h-full w-1/5 bg-red-900" />
+                    <div className="stairing h-full w-1/5 bg-red-900" />
+                    <div className="stairing h-full w-1/5 bg-red-900" />
+                    <div className="stairing h-full w-1/5 bg-red-900" />
+                    <div className="stairing h-full w-1/5 bg-red-900" />
                 </div>
             </div>
-            <div className='relative'>
+            <div ref={fullNavLinksRef} className='relative'>
                 <div className='flex w-full justify-between items-center'>
                     <div className='p-3 pt-2.5'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="103" height="44" viewBox="0 0 103 44">
@@ -20,7 +44,7 @@ const FullScreenNav = () => {
                             </path>
                         </svg>
                     </div>
-                    <div className='h-[10vw] w-[10vw] relative'>
+                    <div className='h-[10vw] w-[10vw] relative cursor-pointer'>
                         <div className='absolute top-1/2 left-1/2 h-[14vw] w-1 bg-[#D3FD50] -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-full'></div>
                         <div className='absolute top-1/2 left-1/2 h-[14vw] w-1 bg-[#D3FD50] -translate-x-1/2 -translate-y-1/2 -rotate-45 rounded-full'></div>
                     </div>
